@@ -1,127 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-
-	<link rel="stylesheet" href="css/main.css">
-	<script src="js/app.js" defer></script>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bughday Rahimli | AI Developer</title>
+<meta name="description" content="Portfolio of Bughday Rahimli: AI and 1C developer.">
+<meta name="theme-color" content="#0a0f10">
+<meta property="og:title" content="Bughday Rahimli | AI Developer">
+<meta property="og:description" content="Portfolio of Bughday Rahimli: AI and 1C developer.">
+<meta property="og:type" content="website">
+<script>try{if(localStorage.getItem('site-theme')==='purple')document.documentElement.setAttribute('data-theme','purple')}catch(e){}</script>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/AllYoko.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Montserrat:wght@500;600&family=Raleway:wght@100;300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<button class="snd rv" id="snd" type="button" style="--d:1.4s" aria-pressed="true" aria-label="Turn sound off"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path class="w" d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.6 7.6 0 0 1 0 11"/><path class="x" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button><span class="snd-hint" aria-hidden="true">TAP ANYWHERE FOR SOUND</span><button class="theme" id="theme" type="button" aria-label="Switch to purple palette" aria-pressed="false"><i></i></button>
+<button class="back" id="back" type="button" aria-label="Back to start">&larr; BACK</button>
+<main>
+<section class="hero" id="hero">
+ <div class="glwrap" id="glwrap"><canvas id="gl" class="rv" style="--d:.1s" aria-hidden="true"></canvas></div>
+ <div class="stage" id="stage">
+ <pre class="code c1 rv px" style="--d:.5s;--k:-4" aria-hidden="true"><span class="k">import</span> <span class="c">torch</span>
+<span class="k">import</span> <span class="c">torch.nn</span> <span class="k">as</span> <span class="c">nn</span>
+<span class="k">import</span> <span class="c">torch.optim</span> <span class="k">as</span> <span class="c">optim</span>
 
-	<div class="container">
-		<section class="gallery">
+model <span class="p">=</span> <span class="c">NeuralNetwork</span><span class="p">()</span>
+optimizer <span class="p">=</span> optim.<span class="f">Adam</span><span class="p">(</span>model.<span class="f">parameters</span><span class="p">(),</span> lr<span class="p">=</span><span class="n">0.001</span><span class="p">)</span>
+criterion <span class="p">=</span> nn.<span class="f">CrossEntropyLoss</span><span class="p">()</span>
 
-			<div class="frame">
-				<div class="frame__content">
-					<h2>Welcome to My Portfolio</h2>
-				</div>
-			</div>
+<span class="k">for</span> epoch <span class="k">in</span> <span class="f">range</span><span class="p">(</span><span class="n">100</span><span class="p">):</span>
+    optimizer.<span class="f">zero_grad</span><span class="p">()</span>
+    predictions <span class="p">=</span> <span class="f">model</span><span class="p">(</span>inputs<span class="p">)</span>
+    loss <span class="p">=</span> <span class="f">criterion</span><span class="p">(</span>predictions<span class="p">,</span> labels<span class="p">)</span>
+    loss.<span class="f">backward</span><span class="p">()</span>
+    optimizer.<span class="f">step</span><span class="p">()</span></pre>
+ <div class="anchor a-row"><button class="btn rv px" id="go" style="--d:.9s;--k:-6" type="button">VIEW PORTFOLIO</button><div class="st rv px" style="--d:1.1s;--k:-8" role="status"><span class="dot"></span>SYSTEM ONLINE</div></div>
+ <h1 aria-label="Bughday Rahimli"><span class="nm n1 rv px" style="--d:.7s;--k:8" aria-hidden="true">BUGHDAY</span><span class="nm n2 rv px" style="--d:.85s;--k:10" aria-hidden="true">RAHIMLI</span></h1>
+ <pre class="code c2 rv px" style="--d:1.3s;--k:6" aria-hidden="true"><span class="k">with</span> torch.<span class="f">no_grad</span><span class="p">():</span>
+    outputs <span class="p">=</span> <span class="f">model</span><span class="p">(</span>test_inputs<span class="p">)</span>
+    predictions <span class="p">=</span> torch.<span class="f">softmax</span><span class="p">(</span>outputs<span class="p">,</span> dim<span class="p">=</span><span class="n">1</span><span class="p">)</span>
 
-			
+accuracy <span class="p">=</span> <span class="p">(</span>predictions.<span class="f">argmax</span><span class="p">(</span><span class="n">1</span><span class="p">)</span> <span class="p">==</span> test_labels<span class="p">).</span><span class="f">float</span><span class="p">().</span><span class="f">mean</span><span class="p">()</span>
 
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<video class="frame-media frame-media_right" src="media/square.webp" autoplay loop muted></video>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-
-				<div class="frame">
-					<div class="frame__content text-right">
-						<h3><a href="https://github.com/rahimlibughday/TgAssis" target="_blank">Telegram Assistant</a></h3>
-						<p>An autonomous <b>AI-powered assistant</b> designed to automate Telegram channel management using Qwen 2.5.<br>✨ Key Features<br> Content Planning: Automatically generates engaging content plans and writes posts tailored to your channel's niche.<br>Analytics & Insights: Collects post statistics and view metrics to track growth and engagement.<br>Local Inference: Fully powered by llama-cpp-python for privacy, reliability, and full control over LLM execution.<br>Background Automation: Runs seamlessly on a background scheduler with automated scheduling and SQLite database integration.</p>
-					</div>
-				</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_left" style="background-image: url(images/tg_assis.png); background-size: contain; background-repeat: no-repeat;"></div>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content text-left">
-					<h3><a href="https://github.com/rahimlibughday/MoveUpAI" target="_blank">MoveUpAI</a></h3>
-					<p>🏃‍♂️ A hackathon SportsTech app that uses real-time pose detection 📹 to track workouts, gamifies fitness through city-based leaderboards 🏆, and rewards users with crypto tokens 🪙 redeemable for real prizes.<br>
-					I worked on the AI of this project, so you can find only the AI-related code here.
-					Full project: https://github.com/devbabayev/metu-sport-tech</p>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_right" style="background-image: url(images/moveup_logo.svg); background-size: contain; background-repeat: no-repeat;"></div>
-				</div>
-			</div>
-
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content text-right">
-					<h3><a href="https://github.com/rahimlibughday/VideoConverter26" target="_blank">Video Converter</a></h3>
-					<p>🎥 Any input video — pick any video file, any size, any format supported by FFmpeg<br>
-💾 Custom output — choose your own destination folder and file name for the converted result<br>
-⚡ Fast compression — powered by FFmpeg's libx264 encoder, with optional GPU-accelerated encoding for faster processing<br>
-🎨 Opera GX–style UI — dark theme with gradient accents, built entirely with CustomTkinter<br>
-📦 Standalone build — packaged as a single executable with PyInstaller, no separate Python or FFmpeg install required for end users</p>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_left" style="background-image: url(images/video_conv.svg); background-size: contain; background-repeat: no-repeat;"></div>
-				</div>
-			</div>
-
-			<!-- <div class="frame">
-				<div class="frame__content">
-					<video class="frame-media frame-media_left" src="media/video_optimized.mp4" autoplay loop muted></video>
-				</div>
-			</div> -->
-
-			<div class="frame"></div>
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content text-left">
-					<h3><a href="https://github.com/rahimlibughday/KaryerAz" target="_blank">KaryerAz</a></h3>
-					<p>📄 Upload your resume — paste your CV text into the app.<br>
-🧠 AI resume analysis — DeepSeek AI detects your specialization, experience level, current skills, and strengths.<br>
-📊 Market gap analysis — your skills are compared against real in-demand skills for your specialization, producing a readiness score.<br>
-❓ Adaptive quiz — a 6-question technical quiz is generated on the spot, mixing questions on your existing skills and your knowledge gaps.<br>
-🗺️ Personalized roadmap — based on your quiz results and gap analysis, the AI generates a phased learning plan with free resources and a weekly goal.<br>
-💼 Job board — browse real job vacancies filtered by specialization, salary, and experience level.</p>
-				</div>
-			</div>
-
-			<div class="frame frame_bg">
-				<div class="frame__content">
-					<div class="frame-media frame-media_right" style="background-image: url(images/karyeraz.svg); background-size: contain; background-repeat: no-repeat;"></div>
-				</div>
-			</div>
-
-
-			<!-- <div class="frame frame_bg">
-				<div class="frame__content">
-					<video class="frame-media" src="media/video_optimized.mp4" autoplay loop muted></video>
-				</div> -->
-
-			<div class="frame"></div>
-			<div class="frame"></div>
-
-			<div class="frame">
-				<div class="frame__content">© Bughday Rahimli</div>
-			</div>
-
-		</section>
-	</div>
-
+<span class="f">print</span><span class="p">(</span><span class="s">f"Model Accuracy: </span><span class="p">{</span>accuracy<span class="p">:.2%}</span><span class="s">"</span><span class="p">)</span></pre>
+ </div>
+</section>
+</main>
+<div class="space" id="space"></div>
+<canvas id="warp" aria-hidden="true"></canvas>
+<section class="work" id="work" aria-label="Portfolio">
+<div class="persp" id="persp"><div class="gallery" id="gallery">
+<article class="frame" data-title="Welcome"><div class="fr-in fr-title"><div class="who">BUGHDAY RAHIMLI</div><h2>Welcome to<br>my portfolio</h2><p class="sub">Scroll or swipe to fly forward</p></div></article>
+<article class="frame" data-title="Telegram Assistant"><div class="fr-in tr"><div class="txt"><span class="idx">01 / 04</span><h3><a href="https://github.com/rahimlibughday/TgAssis" target="_blank" rel="noopener noreferrer">Telegram Assistant</a></h3><p class="lead">An autonomous <b>AI-powered assistant</b> designed to automate Telegram channel management using Qwen 2.5.</p><ul><li><b>Content Planning:</b> automatically generates engaging content plans and writes posts tailored to your channel’s niche.</li><li><b>Analytics &amp; Insights:</b> collects post statistics and view metrics to track growth and engagement.</li><li><b>Local Inference:</b> fully powered by llama-cpp-python for privacy, reliability, and full control over LLM execution.</li><li><b>Background Automation:</b> runs on a background scheduler with automated scheduling and SQLite database integration.</li></ul><a class="repo" href="https://github.com/rahimlibughday/TgAssis" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div><div class="med tall"><img src="assets/img/tg_assis.webp" alt="Telegram Assistant logo" loading="lazy" decoding="async"></div></div></article>
+<article class="frame" data-title="MoveUpAI"><div class="fr-in"><div class="txt"><span class="idx">02 / 04</span><h3><a href="https://github.com/rahimlibughday/MoveUpAI" target="_blank" rel="noopener noreferrer">MoveUpAI</a></h3><p class="lead">🏃‍♂️ A hackathon SportsTech app that uses real-time pose detection 📹 to track workouts, gamifies fitness through city-based leaderboards 🏆, and rewards users with crypto tokens 🪙 redeemable for real prizes.</p><ul><li>I worked on the AI of this project, so you can find only the AI-related code here.</li></ul><a class="repo" href="https://github.com/rahimlibughday/MoveUpAI" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a><a class="repo alt" href="https://github.com/devbabayev/metu-sport-tech" target="_blank" rel="noopener noreferrer">Full project ↗</a></div><div class="med "><img src="assets/img/moveup_logo.svg" alt="MoveUpAI logo" loading="lazy" decoding="async"></div></div></article>
+<article class="frame" data-title="Video Converter"><div class="fr-in tr"><div class="txt"><span class="idx">03 / 04</span><h3><a href="https://github.com/rahimlibughday/VideoConverter26" target="_blank" rel="noopener noreferrer">Video Converter</a></h3><p class="lead">A desktop video converter built with FFmpeg and CustomTkinter.</p><ul><li>🎥 <b>Any input video</b> — pick any video file, any size, any format supported by FFmpeg</li><li>💾 <b>Custom output</b> — choose your own destination folder and file name for the converted result</li><li>⚡ <b>Fast compression</b> — powered by FFmpeg’s libx264 encoder, with optional GPU-accelerated encoding</li><li>🎨 <b>Opera GX–style UI</b> — dark theme with gradient accents, built entirely with CustomTkinter</li><li>📦 <b>Standalone build</b> — packaged as a single executable with PyInstaller, no separate Python or FFmpeg install required</li></ul><a class="repo" href="https://github.com/rahimlibughday/VideoConverter26" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div><div class="med "><img src="assets/img/video_conv.svg" alt="Video Converter logo" loading="lazy" decoding="async"></div></div></article>
+<article class="frame" data-title="KaryerAz"><div class="fr-in"><div class="txt"><span class="idx">04 / 04</span><h3><a href="https://github.com/rahimlibughday/KaryerAz" target="_blank" rel="noopener noreferrer">KaryerAz</a></h3><p class="lead">An AI career assistant: from CV analysis to a personal learning roadmap.</p><ul><li>📄 <b>Upload your resume</b> — paste your CV text into the app.</li><li>🧠 <b>AI resume analysis</b> — DeepSeek AI detects your specialization, experience level, current skills, and strengths.</li><li>📊 <b>Market gap analysis</b> — your skills are compared against in-demand skills, producing a readiness score.</li><li>❓ <b>Adaptive quiz</b> — a 6-question technical quiz on your existing skills and knowledge gaps.</li><li>🗺️ <b>Personalized roadmap</b> — a phased learning plan with free resources and a weekly goal.</li><li>💼 <b>Job board</b> — browse real vacancies filtered by specialization, salary, and experience level.</li></ul><a class="repo" href="https://github.com/rahimlibughday/KaryerAz" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a></div><div class="med "><img src="assets/img/karyeraz.svg" alt="KaryerAz logo" loading="lazy" decoding="async"></div></div></article>
+<article class="frame" data-title="End"><div class="fr-in fr-title"><h2 class="small">© Bughday Rahimli</h2><button class="btn" id="home" type="button">BACK TO START</button></div></article>
+</div></div>
+<nav class="dots" id="dots" aria-label="Projects"></nav>
+<div class="hint" id="hint">SCROLL · SWIPE · ARROW KEYS</div>
+</section>
+<script src="assets/js/vendor/three.min.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/warp.js"></script>
+<script src="assets/js/audio.js"></script>
 </body>
 </html>
